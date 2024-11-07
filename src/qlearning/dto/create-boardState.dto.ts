@@ -1,4 +1,4 @@
-import { IsArray, IsBoolean, ArrayMinSize, ArrayMaxSize, IsString, ValidateNested } from 'class-validator';
+import { IsArray, IsBoolean, ArrayMinSize, ArrayMaxSize, IsString } from 'class-validator';
 
 export class CreateBoardStateDto {
     @IsArray()
