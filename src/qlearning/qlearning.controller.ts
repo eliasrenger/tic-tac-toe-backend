@@ -1,11 +1,7 @@
 import { Body, Controller } from '@nestjs/common';
 import { Get } from '@nestjs/common';
 import { QlearningService } from './qlearning.service';
-
-interface BoardState {
-    squares: string[];
-    xIsNext: boolean;
-}
+import { CreateBoardStateDto } from './dto/create-boardState.dto';
 
 @Controller('qlearning')
 export class QlearningController {
@@ -13,7 +9,7 @@ export class QlearningController {
     constructor(private readonly qlearningService: QlearningService) {}
 
     @Get('move') // GET /qlearning/move
-    makeMove(@Body() boardState: BoardState): BoardState {
-        return this.qlearningService.makeMove(boardState);
+    makeMove(@Body() createBoardStateDto: CreateBoardStateDto): CreateBoardStateDto {
+        return this.qlearningService.makeMove(createBoardStateDto);
     }
 }

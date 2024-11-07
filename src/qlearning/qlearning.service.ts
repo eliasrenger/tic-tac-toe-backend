@@ -1,21 +1,17 @@
 import { Injectable } from '@nestjs/common';
-
-interface BoardState {
-    squares: string[];
-    xIsNext: boolean;
-}
+import { CreateBoardStateDto } from './dto/create-boardState.dto';
 
 @Injectable()
 export class QlearningService {
     private qTable: number[][] = [[3]];
 
-    makeMove(boardState: BoardState): BoardState {
-        if (boardState.xIsNext) {
-            boardState.squares[3] = "X";
+    makeMove(createBoardStateDto: CreateBoardStateDto): CreateBoardStateDto {
+        if (createBoardStateDto.xIsNext) {
+            createBoardStateDto.squares[3] = "X";
         } else {
-            boardState.squares[3] = "O";
+            createBoardStateDto.squares[3] = "O";
         }
-        boardState.xIsNext = !boardState.xIsNext;
-        return boardState;
+        createBoardStateDto.xIsNext = !createBoardStateDto.xIsNext;
+        return createBoardStateDto;
     }
 }
