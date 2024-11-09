@@ -22,21 +22,21 @@ export class LoggerService extends ConsoleLogger {
     }
   }
 
-  log(message: string, context?: string) {
+  log(message: any, context?: string) {
     const entry = context ? `[${context}]\t${message}` : message;
     this.logToFile(entry);
 
     super.log(message, context);
   }
 
-  warn(message: string, context?: string) {
+  warn(message: any, context?: string) {
     const entry = context ? `[${context}]\t${message}` : message;
     this.logToFile(entry);
 
     super.warn(message, context);
   }
 
-  error(message: string, stackOrContext: string) {
+  error(message: any, stackOrContext: string) {
     const entry = stackOrContext ? `[${stackOrContext}]\t${message}` : message;
     this.logToFile(entry);
 
