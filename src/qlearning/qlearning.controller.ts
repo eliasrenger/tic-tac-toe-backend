@@ -14,7 +14,7 @@ export class QlearningController {
     @Ip() ip: string,
     @Body(ValidationPipe) createBoardStateDto: CreateBoardStateDto,
   ): CreateBoardStateDto {
-    this.loggerService.log(`Request a move\t${ip}`);
+    this.loggerService.log(`Request a move\t${ip}`, QlearningController.name);
     return this.qlearningService.makeMove(createBoardStateDto);
   }
 }
