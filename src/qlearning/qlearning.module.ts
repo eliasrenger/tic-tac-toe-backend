@@ -4,6 +4,6 @@ import { QlearningController } from './qlearning.controller';
 
 @Module({
   providers: [QlearningService],
-  controllers: [QlearningController]
+  controllers: [QlearningController],
 })
 export class QlearningModule {}
