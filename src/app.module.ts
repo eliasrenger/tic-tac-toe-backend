@@ -3,12 +3,12 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ThrottlerModule, ThrottlerGuard } from '@nestjs/throttler';
 import { APP_GUARD } from '@nestjs/core';
-import { QlearningModule } from './qlearning/qlearning.module';
+import { TicTacToeAgentModule } from './tic-tac-toe-agent/tic-tac-toe-agent.module';
 import { LoggerModule } from './logger/logger.module';
 
 @Module({
     imports: [
-        QlearningModule,
+        TicTacToeAgentModule,
         ThrottlerModule.forRoot([
             {
                 name: 'short',

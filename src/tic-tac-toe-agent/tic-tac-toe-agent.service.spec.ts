@@ -1,15 +1,15 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { QlearningService } from './qlearning.service';
+import { TicTacToeAgentService } from './tic-tac-toe-agent.service';
 
-describe('QlearningService', () => {
-    let service: QlearningService;
+describe('TicTacToeAgentService', () => {
+    let service: TicTacToeAgentService;
 
     beforeEach(async () => {
         const module: TestingModule = await Test.createTestingModule({
-            providers: [QlearningService],
+            providers: [TicTacToeAgentService],
         }).compile();
 
-        service = module.get<QlearningService>(QlearningService);
+        service = module.get<TicTacToeAgentService>(TicTacToeAgentService);
     });
 
     it('should be defined', () => {
