@@ -4,14 +4,14 @@ import { TicTacToeAgent } from './tic-tac-toe-agent';
 
 @Injectable()
 export class TicTacToeAgentService {
-    // qData: Object;
 
-    // constructor() {
-    //     this.qData = TicTacToeAgent.loadQData();
-    // }
+    private ticTacToeAgent = new TicTacToeAgent();
+
+    constructor() {
+        this.ticTacToeAgent.loadQTable();
+    }
 
     makeMove(createBoardStateDto: CreateBoardStateDto): CreateBoardStateDto {
-        // const move = this.qData[createBoardStateDto.squares.join('')];
-        return createBoardStateDto;
+        return this.ticTacToeAgent.makeMove(createBoardStateDto);
     }
 }

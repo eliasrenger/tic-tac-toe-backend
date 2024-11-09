@@ -4,6 +4,8 @@ import {
     ArrayMinSize,
     ArrayMaxSize,
     IsString,
+    IsNumber,
+    IsOptional,
 } from 'class-validator';
 
 export class CreateBoardStateDto {
@@ -15,4 +17,8 @@ export class CreateBoardStateDto {
 
     @IsBoolean()
     xIsNext: boolean;
+
+    @IsOptional()
+    @IsNumber()
+    action?: number;
 }
